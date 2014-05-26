@@ -29,5 +29,6 @@
 // forward declarations
 
 - (void)stopServer:(NSString *)reason;
++ (Receiver *)getSharedInstance;
 
 @end

@@ -88,7 +88,7 @@ Copyright (C) 2012 Apple Inc. All Rights Reserved.
 @synthesize voiceReceiver     = _voiceReceiver;
 
 
-+ (Sender *)sharedSenderInstance {
+/*+ (Sender *)sharedSenderInstance {
     static Sender *voiceSender = nil;
     
     if (voiceSender) {
@@ -112,7 +112,7 @@ Copyright (C) 2012 Apple Inc. All Rights Reserved.
     
     return voiceReceiver;
     
-}
+}*/
 
 char *OSTypeToStr(char *buf, OSType t)
 {
@@ -178,7 +178,7 @@ char *OSTypeToStr(char *buf, OSType t)
 - (IBAction)play:(id)sender
 {
     if (!self.voiceReceiver) {
-        _voiceReceiver = [SpeakHereController sharedReceiverInstance];
+        _voiceReceiver = [Receiver getSharedInstance];
     }
     
     [self.voiceReceiver startServer];
@@ -206,7 +206,7 @@ char *OSTypeToStr(char *buf, OSType t)
 - (IBAction)record:(id)sender
 {
     if (!self.voiceSender) {
-        _voiceSender = [SpeakHereController sharedSenderInstance];
+        _voiceSender = [Sender getSharedInstance];
     }
     
     //start network connection,

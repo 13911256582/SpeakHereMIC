@@ -103,17 +103,30 @@ void AQRecorder::MyInputBufferHandler(	void *								inUserData,
 			// write packets to file
 			
 #warning added by shaol
-            Sender * voiceSender = [SpeakHereController sharedSenderInstance];
+            Sender * voiceSender = [Sender getSharedInstance];
             
-            /*NSData *audioData = [NSData dataWithBytes:inBuffer->mAudioData length:inBuffer->mAudioDataByteSize];
+            if (voiceSender.canSendNow) {
+                //send immediately
+                NSInteger bytesWritten;
+                bytesWritten = [voiceSender.networkStream write:(uint8_t*)(inBuffer->mAudioData) maxLength:inBuffer->mAudioDataByteSize];
+                NSLog(@"bytes written to network %d", bytesWritten);
+            } else {
+                // put in queue
+                NSData *audioData = [NSData dataWithBytes:inBuffer->mAudioData length:inBuffer->mAudioDataByteSize];
+                NSMutableArray  *inBufferArray = [voiceSender inBufferArray];
+                [inBufferArray addObject:audioData];
+            }
+
             
-            const uint8_t *buffer = (const uint8_t *)[audioData bytes];*/
+            //const uint8_t *buffer = (const uint8_t *)[audioData bytes];*/
             
-            voiceSender.bufferOffset = 0;
+            /*voiceSender.bufferOffset = 0;
             voiceSender.bufferLimit  = inBuffer->mAudioDataByteSize;
             
             NSInteger bytesWritten;
-            bytesWritten = [voiceSender.networkStream write:(uint8_t*)inBuffer->mAudioData maxLength:inBuffer->mAudioDataByteSize];
+            bytesWritten = [voiceSender.networkStream write:(uint8_t*)(inBuffer->mAudioData) maxLength:inBuffer->mAudioDataByteSize];
+            
+            NSLog(@"audio data size: %d", (unsigned int)inBuffer->mAudioDataByteSize);*/
             
             //NSLog(@"bytes written to network %d", bytesWritten);
             
@@ -199,6 +212,9 @@ void AQRecorder::SetupAudioFormat(UInt32 inFormatID)
 		mRecordFormat.mBitsPerChannel = 16;
 		mRecordFormat.mBytesPerPacket = mRecordFormat.mBytesPerFrame = (mRecordFormat.mBitsPerChannel / 8) * mRecordFormat.mChannelsPerFrame;
 		mRecordFormat.mFramesPerPacket = 1;
+        
+        NSLog(@"channel per frame: %d", (unsigned int)mRecordFormat.mChannelsPerFrame);
+        NSLog(@"bytes per packet: %d", (unsigned int)mRecordFormat.mBytesPerPacket);
 	}
 }
 

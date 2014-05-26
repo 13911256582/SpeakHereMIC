@@ -92,6 +92,6 @@ Copyright (C) 2012 Apple Inc. All Rights Reserved.
 - (IBAction)record: (id) sender;
 - (IBAction)play: (id) sender;
 
-+ (Sender *)sharedSenderInstance;
-+ (Receiver *)sharedReceiverInstance;
+//+ (Sender *)sharedSenderInstance;
+//+ (Receiver *)sharedReceiverInstance;
 @end

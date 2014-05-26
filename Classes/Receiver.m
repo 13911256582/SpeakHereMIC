@@ -28,6 +28,15 @@
 @synthesize filePath        = _filePath;
 
 
++ (Receiver *)getSharedInstance{
+    static Receiver *receiver;
+    
+    if (!receiver) {
+        receiver =[[Receiver alloc]init];
+    }
+    return receiver;
+}
+
 - (void)didStartNetworkOperation {
     [[NetworkManager sharedInstance] didStartNetworkOperation];
 }
@@ -39,6 +48,7 @@
 - (void)updateStatus:(NSString *)status {
     NSLog(@"%@", status);
 }
+
 
 #pragma mark * Core transfer code
 
