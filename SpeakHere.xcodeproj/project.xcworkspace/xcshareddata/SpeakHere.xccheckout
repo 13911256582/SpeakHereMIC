@@ -5,19 +5,31 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
+<<<<<<< HEAD
 	<string>8E09BB2A-7542-45DE-AD16-DFAEBBA5A4A6</string>
+=======
+	<string>2345E2FB-9B60-4A8F-A7FF-5AD272B72862</string>
+>>>>>>> FETCH_HEAD
 	<key>IDESourceControlProjectName</key>
 	<string>SpeakHere</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+<<<<<<< HEAD
 		<key>9D90E871-5D14-4365-995A-19BD3F799C0A</key>
+=======
+		<key>6E4333CA-5902-4F07-AAE8-2C1F076CB054</key>
+>>>>>>> FETCH_HEAD
 		<string>https://github.com/13911256582/SpeakHereMIC.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>SpeakHere.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+<<<<<<< HEAD
 		<key>9D90E871-5D14-4365-995A-19BD3F799C0A</key>
+=======
+		<key>6E4333CA-5902-4F07-AAE8-2C1F076CB054</key>
+>>>>>>> FETCH_HEAD
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +37,22 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
+<<<<<<< HEAD
 	<string>9D90E871-5D14-4365-995A-19BD3F799C0A</string>
+=======
+	<string>6E4333CA-5902-4F07-AAE8-2C1F076CB054</string>
+>>>>>>> FETCH_HEAD
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
+<<<<<<< HEAD
 			<string>9D90E871-5D14-4365-995A-19BD3F799C0A</string>
+=======
+			<string>6E4333CA-5902-4F07-AAE8-2C1F076CB054</string>
+>>>>>>> FETCH_HEAD
 			<key>IDESourceControlWCCName</key>
 			<string>SpeakHereMIC</string>
 		</dict>
