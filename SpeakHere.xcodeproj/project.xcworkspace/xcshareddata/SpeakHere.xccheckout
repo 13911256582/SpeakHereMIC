@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2345E2FB-9B60-4A8F-A7FF-5AD272B72862</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SpeakHere</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6E4333CA-5902-4F07-AAE8-2C1F076CB054</key>
+		<string>https://github.com/13911256582/SpeakHereMIC.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SpeakHere.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6E4333CA-5902-4F07-AAE8-2C1F076CB054</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/13911256582/SpeakHereMIC.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6E4333CA-5902-4F07-AAE8-2C1F076CB054</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6E4333CA-5902-4F07-AAE8-2C1F076CB054</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SpeakHereMIC</string>
+		</dict>
+	</array>
+</dict>
+</plist>

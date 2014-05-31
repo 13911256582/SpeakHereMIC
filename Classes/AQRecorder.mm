@@ -108,13 +108,19 @@ void AQRecorder::MyInputBufferHandler(	void *								inUserData,
             if (voiceSender.canSendNow) {
                 //send immediately
                 NSInteger bytesWritten;
-                bytesWritten = [voiceSender.networkStream write:(uint8_t*)(inBuffer->mAudioData) maxLength:inBuffer->mAudioDataByteSize];
-                NSLog(@"bytes written to network %d", bytesWritten);
+                NSInteger bytesSending = inBuffer->mAudioDataByteSize;
+                
+                bytesWritten = [voiceSender.networkStream write:(uint8_t*)(inBuffer->mAudioData) maxLength:bytesSending];
+                if (bytesSending!= bytesWritten) {
+                    NSLog(@"not all data sent to network, sending: %d, sent: %d", bytesSending, bytesWritten);
+                }
+                NSLog(@"audio bytes sending to network: %d", bytesSending);
             } else {
                 // put in queue
                 NSData *audioData = [NSData dataWithBytes:inBuffer->mAudioData length:inBuffer->mAudioDataByteSize];
                 NSMutableArray  *inBufferArray = [voiceSender inBufferArray];
                 [inBufferArray addObject:audioData];
+                NSLog(@"audio bytes being queued: %d", (unsigned int)inBuffer->mAudioDataByteSize);
             }
 
             
@@ -261,6 +267,8 @@ void AQRecorder::StartRecord(CFStringRef inRecordFile)
 		CopyEncoderCookieToFile();*/
 		
 		// allocate and enqueue buffers
+#warning shaol, change bufferByteSize will change the fequency of call-back, and impact latency
+        
 		bufferByteSize = ComputeRecordBufferSize(&mRecordFormat, kBufferDurationSeconds);	// enough bytes for half a second
 		for (i = 0; i < kNumberRecordBuffers; ++i) {
 			XThrowIfError(AudioQueueAllocateBuffer(mQueue, bufferByteSize, &mBuffers[i]),
